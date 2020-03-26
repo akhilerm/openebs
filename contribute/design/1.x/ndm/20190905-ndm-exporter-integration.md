@@ -144,11 +144,11 @@ fetched from the disk using SMART and Seachest libraries and returned.
 
 - Cluster Level exporter
 
-    `1.` Queries the cluster level operator for static data about all block devices
+    1. Queries the cluster level operator for static data about all block devices
      in the cluster
-    `2.` Requests etcd for all blockdevices and their properties
-    `3.` Response from etcd with all blockdevices
-    `4.` Response from cluster level exporter to prometheus with static metrics
+    2. Requests etcd for all blockdevices and their properties
+    3. Response from etcd with all blockdevices
+    4. Response from cluster level exporter to prometheus with static metrics
 
 Sample metrics when cluster exporter endpoint is queried
 ```
@@ -165,11 +165,11 @@ node_reject_request_count 0
 
 - Node Level exporter
 
-    `5.` Queries each storage node for disk metrics
-    `6.` exporter-d queries certain pages on the disk to get relevant metrics data
-    `7.` The information from the pages is analysed using SMART and seachest libraries
+    5. Queries each storage node for disk metrics
+    6. exporter-d queries certain pages on the disk to get relevant metrics data
+    7. The information from the pages is analysed using SMART and seachest libraries
        to get relevant metric about the disk
-    `8.` The live metrics are send back to prometheus.
+    8. The live metrics are send back to prometheus.
 
 Sample metrics when node level exporter is queried
 ```
