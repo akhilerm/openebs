@@ -151,17 +151,17 @@ fetched from the disk using SMART and Seachest libraries and returned.
     4. Response from cluster level exporter to prometheus with static metrics
 
 Sample metrics when cluster exporter endpoint is queried
-    ```
-    # HELP node_block_device_state State of BlockDevice (0,1,2) = {Active, Inactive, Unknown}
-    # TYPE node_block_device_state gauge
-    node_block_device_state{blockdevicename="blockdevice-6a0ec0732d1f709810a3fbbde81fc3bb",hostname="minikube",nodename="minikube",path="sda"} 0
-    # HELP node_error_request_count No. of requests errored out by the exporter
-    # TYPE node_error_request_count counter
-    node_error_request_count 2
-    # HELP node_reject_request_count No. of requests rejected by the exporter
-    # TYPE node_reject_request_count counter
-    node_reject_request_count 0
-    ```
+```
+# HELP node_block_device_state State of BlockDevice (0,1,2) = {Active, Inactive, Unknown}
+# TYPE node_block_device_state gauge
+node_block_device_state{blockdevicename="blockdevice-6a0ec0732d1f709810a3fbbde81fc3bb",hostname="minikube",nodename="minikube",path="sda"} 0
+# HELP node_error_request_count No. of requests errored out by the exporter
+# TYPE node_error_request_count counter
+node_error_request_count 2
+# HELP node_reject_request_count No. of requests rejected by the exporter
+# TYPE node_reject_request_count counter
+node_reject_request_count 0
+```
 
 - Node Level exporter
 
