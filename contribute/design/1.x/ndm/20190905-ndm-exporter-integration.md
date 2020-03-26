@@ -144,33 +144,33 @@ fetched from the disk using SMART and Seachest libraries and returned.
 
 - Cluster Level exporter
 
-    a. Queries the cluster level operator for static data about all block devices
+    1. Queries the cluster level operator for static data about all block devices
      in the cluster
-    a. Requests etcd for all blockdevices and their properties
-    a. Response from etcd with all blockdevices
-    a. Response from cluster level exporter to prometheus with static metrics
+    2. Requests etcd for all blockdevices and their properties
+    3. Response from etcd with all blockdevices
+    4. Response from cluster level exporter to prometheus with static metrics
 
 Sample metrics when cluster exporter endpoint is queried
-```
-# HELP node_block_device_state State of BlockDevice (0,1,2) = {Active, Inactive, Unknown}
-# TYPE node_block_device_state gauge
-node_block_device_state{blockdevicename="blockdevice-6a0ec0732d1f709810a3fbbde81fc3bb",hostname="minikube",nodename="minikube",path="sda"} 0
-# HELP node_error_request_count No. of requests errored out by the exporter
-# TYPE node_error_request_count counter
-node_error_request_count 2
-# HELP node_reject_request_count No. of requests rejected by the exporter
-# TYPE node_reject_request_count counter
-node_reject_request_count 0
-```
+    ```
+    # HELP node_block_device_state State of BlockDevice (0,1,2) = {Active, Inactive, Unknown}
+    # TYPE node_block_device_state gauge
+    node_block_device_state{blockdevicename="blockdevice-6a0ec0732d1f709810a3fbbde81fc3bb",hostname="minikube",nodename="minikube",path="sda"} 0
+    # HELP node_error_request_count No. of requests errored out by the exporter
+    # TYPE node_error_request_count counter
+    node_error_request_count 2
+    # HELP node_reject_request_count No. of requests rejected by the exporter
+    # TYPE node_reject_request_count counter
+    node_reject_request_count 0
+    ```
 
 - Node Level exporter
 
-    a. Queries each storage node for disk metrics
-    a. exporter-d queries certain pages on the disk to get relevant metrics data
-    a. The information from the pages is analysed using SMART and seachest libraries
+    5. Queries each storage node for disk metrics
+    6. exporter-d queries certain pages on the disk to get relevant metrics data
+    7. The information from the pages is analysed using SMART and seachest libraries
        to get relevant metric about the disk
-    a. The live metrics are send back to prometheus.
-
+    8. The live metrics are send back to prometheus.
+    
 Sample metrics when node level exporter is queried
 ```
 # HELP seachest_block_device_current_temperature_celsius Current reported temperature of the blockdevice. -1 if not reported
